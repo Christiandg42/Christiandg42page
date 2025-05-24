@@ -1,0 +1,676 @@
+@font-face {
+  font-family: face;
+  src: url('../fuentes/DepartureMono-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: Barlow;
+  src: url('../fuentes/Exo2-VariableFont_wght.ttf') format(woff2),
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.logo a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.logo a:hover {
+  color: #79c1f1;
+}
+
+
+body {
+  font-family: Barlow;
+  background-image: url(../img/fondo\ inicio.png);
+  color: #333366;
+  line-height: 1.5;
+}
+
+header {
+  background: #333366;
+}
+.navegacion {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  z-index: 9999;  
+}
+
+
+/* Botón hamburguesa inicialmente oculto */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilos generales del menú ordenador */
+.navegacion .menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  z-index: 1000;
+}
+
+/* Media query para móviles  */
+@media (max-width: 768px) {
+  .navegacion .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: rgba(51, 51, 102, 0.95);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 10000;   
+    
+  }
+}
+
+
+  /* Mostrar el botón hamburguesa */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    
+  }
+
+  
+  .navegacion .menu.active {
+    max-height: 300px; 
+  }
+
+  
+  @media (min-width: 769px) {
+  
+  .menu-toggle {
+    display: none !important;
+  }
+
+  /* Forzar que el menú esté siempre desplegado en desktop */
+  .navegacion .menu {
+    position: static !important;
+    display: flex !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+
+  /* Asegurar que los enlaces no se corten */
+  .navegacion .menu li a {
+    display: block;
+    padding: 1rem;
+    white-space: normal;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ccc;
+  }
+
+
+.navegacion .logo {
+  position: absolute;
+  left: 1.5rem;
+  color: #ccc;
+  font-size: 1.5rem;      
+}
+
+.navegacion .menu {
+  display: flex;
+  gap: 2rem;            
+  margin: 0 auto;         
+}
+
+.navegacion .menu a {
+  font-size: 1.2rem;    
+  padding: 0.75rem 0;    
+  color: #ccc;
+}
+.navegacion .menu a:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+  background-color: #79c1f1;
+}
+
+
+/* Enlaces de la sección de inicio */
+.home-hero a {
+  color: #333366;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid #333366;
+  transition: color 0.2s, border-color 0.2s;
+}
+.home-hero a:hover {
+  color: #555;
+  border-color: #555;
+}
+
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.menu a {
+  color: #ccc;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.menu a:hover {
+  background: #34495e;
+  border-radius: 4px;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+
+/* Secciones */
+.seccion {
+  display: none;
+  background: #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.seccion.activa {
+  display: block;
+}
+#seccion-inicio{
+  background-color: #333366;
+ 
+}
+#seccion-inicio h1{
+color: #ccc;
+text-align: center;
+}
+#seccion-inicio a{
+  color: #0077cc;
+  }
+  #seccion-inicio a:hover {
+    border-radius: 4px;
+    border: none;
+    background-color: #79c1f1;
+    text-decoration: underline;/
+  }
+  .seccion p,
+.home-hero p {
+  margin-bottom: 2rem;   
+  line-height: 1.75;     
+}
+/* Formularios */
+.campo {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botones generales (solo usados en el juego) */
+button {
+  padding: 0.75rem 1.5rem;
+  background: #ccc;
+  border: none;
+  border-radius: 4px;
+  color: #8a3c3cad;
+  cursor: pointer;
+  text-align: center;
+  font-family: face;
+  font-weight: bold;
+  font-size: medium;
+}
+
+button:hover {
+  background: #79c1f1;
+}
+
+/* Botones del simulador */
+.btn-compra {
+  background-color: #1e90ff;
+  color: #ccc;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px 3px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-compra:hover {
+  background-color: #0077cc;
+  transform: scale(1.05);
+}
+
+/* Mensajes y errores */
+.mensaje-error {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  display: none;
+  text-align: center;
+}
+
+.mensaje {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+.exito {
+  background: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Juego */
+
+
+.sin-bullets {
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+}
+.sin-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+
+.sin-bullets li i {
+  color: #ccc !important;   
+  font-size: 1.3rem !important; 
+  font-weight: 100;
+}
+
+
+.sin-bullets li i {
+  font-size: 1.2rem;
+  color: #333366;
+}
+
+.contenedor-juego {
+  margin-top: 1rem;
+  color: #ccc;
+  font-family: face;
+}
+
+.contenedor-juego h1,
+.contenedor-juego h3 {
+  font-family: face;
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.escena {
+  margin-top: 1rem;
+}
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.boton-siguiente {
+  margin-top: 1rem;
+}
+
+/* Simulador */
+.productos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.productos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.producto {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background: #ccc;
+  width: 220px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.producto img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.producto img:hover {
+  transform: scale(1.05);
+}
+
+
+.acciones-producto {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+
+.oculta {
+  display: none;
+}
+
+body.fondo-juego {
+  background-image: url(../img/fondo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#seccion-juego {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ccc;
+
+}
+.contador-fav{
+  background-color: #333366;
+  border-style: double;
+  border-color: #333366;
+}
+.icono-boton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icono-boton:hover {
+  transform: scale(1.2);
+  color: #1e90ff;
+}
+
+.icono-boton .fi-sr-heart {
+  color: #e83e8c;
+}
+
+.icono-boton.activo .fi-sr-heart {
+  color: #f06292;
+  text-shadow: 0 0 5px #f06292;
+}
+
+.icono-boton .etiqueta-gusto {
+  font-size: 0.7rem;
+  color: #e83e8c;
+  margin-top: 2px;
+  display: none;
+}
+
+.icono-boton.activo .etiqueta-gusto {
+  display: block;
+}
+
+@keyframes pulse-red {
+  0%   { transform: scale(1);    color: #ccc; }
+  50%  { transform: scale(1.3);  color: #d0094b; }
+  100% { transform: scale(1);    color: #ccc; }
+}
+
+.highlight-heart {
+  animation: pulse-red 1s ease;
+}
+.acciones-producto {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+#seccion-registro{
+  background-color: #333366;
+}
+
+#seccion-registro h1, p{
+ background-color: #333366;
+  color:#ccc;
+  text-align: center;
+}
+#contador-favoritos{
+  color: #ccc;
+}
+.modal-consejo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-contenido {
+  background: #333366;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-contenido h3 {
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.modal-contenido p {
+  font-size: 1rem;
+  white-space: pre-line;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal-cerrar:hover {
+  color: #e74c3c;
+}
+body.fondo-simulacro{
+  background-image: url(../img/fondo\ simulacro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+
+/* ── Contenedor relativo para feed + flechas ─ */
+.tiktok-container {
+  position: relative;
+  padding-top: 3rem;      
+  padding-bottom: 3rem;  
+  max-height: 70vh;  
+  background-color: transparent;      
+}
+
+/* ── Feed vertical con scroll-snap ── */
+#tiktok-feed {
+  overflow-y: auto;
+  max-height: calc(70vh - 4rem); 
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 0.5rem;
+
+}
+
+/* ── Flechas absolutas centradas ─── */
+.nav-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(51, 51, 102, 0.8);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+.arrow-up {
+  top: 1rem;      
+}
+.arrow-down {
+  bottom: 1rem;   
+}
+.nav-arrow:hover {
+  background: rgba(51, 51, 102, 1);
+}
+
+/* ── Ajustes de tarjetas y vídeo ─ */
+
+.tiktok-card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  background: #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: visible;
+}
+
+.tiktok-card iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  border: 7px solid #ccc;      /* color de tu tema */
+  border-radius: 12px;            /* esquinas redondeadas */
+  box-shadow: 0 4px 12px#ccc(0,0,0,0.15);
+
+}
+
+/* ── Tamaño del icono en la flecha ─── */
+.nav-arrow i {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+body.fondo-seguridad{
+  background-image: url(../img/fondo\ seguridad.png);
+  background-size: cover;
+  
+}
+#seccion-seguridad h1, p{
+background-color: #333366;
+text-align: center;
+color: #ccc;
+}
+
+
+#seccion-registro {
+  background-color: #ccc !important;
+}
+
+
+.producto {
+  background-color: #333366 !important;
+  color: #ccc;
+}
+
+/* Titulares y párrafos dentro de la tarjeta */
+.producto h2,
+.producto p {
+  color: #ccc !important;
+}
+
+/*  Iconos de carrito y corazón en blanco */
+.producto .icono-boton i {
+  color: #ccc !important;
+}
+
+
+.producto .icono-boton.activo i.fi-sr-heart {
+  color: #f06292 !important;
+}
+
+footer {
+  padding: 0.5rem 1rem;     
+  font-size: 0.75rem;       
+  background-color: transparent; 
+  color: #ccc;               
+  text-align: center;
+  margin: 0;                
+  line-height: 1.2;          
+}
+
+footer p {
+  margin: 0;  
+  background-color: transparent;              
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+</head>
+<body class="fondo-juego">
+  <header>
+    <nav class="navegacion">
+      <div class="logo"><a href="index.html">Cyberad</a></div>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <i class="fi fi-sr-menu-burger"></i>
+      </button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="juego.html">Juego</a></li>
+        <li><a href="consejos.html">Seguridad</a></li>
+        <li><a href="simulador.html">Simulador</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="seccion-juego" class="seccion activa">
+      <div class="contenedor-juego">
+        <h1><i class="fi fi-sr-incognito"></i> ¿Quién robó a Nico?</h1>
+        <div id="intro-juego" class="escena">
+          <p><strong>Nico</strong>, un chico de 12 años, ha perdido todos sus ahorros digitales. Alguien accedió a sus cuentas. Tu misión:</p>
+          <ul class="sin-bullets">
+            <li><i class="fi fi-rr-exclamation"></i> Detectar errores de seguridad</li>
+            <li><i class="fi fi-rr-search"></i> Recolectar pistas</li>
+            <li><i class="fi fi-sr-badge-sheriff"></i> Acusar al culpable correcto</li>
+          </ul>
+          <button onclick="iniciarEscena(1)">Comenzar investigación</button>
+        </div>
+    <!-- Escenas del juego -->
+    <div id="escena1" class="escena oculta">
+      <h2>Escena 1: Red social</h2>
+      <blockquote>"¡Que bueno que soy al FIFA! me llamo <strong>Nico2008PM</strong> y tengo <strong>3.000 monedas</strong>. ¡Agrégame!"</blockquote>
+      <p>¿Qué hizo mal?</p>
+      <div class="opciones">
+        <button onclick="comprobarRespuesta(1, 'C')">Decir cuántas monedas tiene</button>
+        <button onclick="comprobarRespuesta(1, 'A')">Decir el nombre del juego</button>
+        <button onclick="comprobarRespuesta(1, 'B')">Publicar el nombre de usuario</button>
+        <button onclick="comprobarRespuesta(1, 'D')">Todo lo anterior</button>
+      </div>
+      <div id="retro1" class="mensaje"></div>
+      <button id="btnSgte1" class="boton-siguiente oculta" onclick="mostrarSospechoso(1)">Ver sospechoso</button>
+    </div>
+
+    <div id="sospechoso1" class="escena oculta">
+      <h3><i class="fi fi-sr-unlock"></i> Sospechoso desbloqueado: DarkLion99</h3>
+      <p>Un jugador que tenía a Nico en la play y sabía cuánto dinero tenía.</p>
+      <button onclick="iniciarEscena(2)">Siguiente escena</button>
+    </div>
+
+    <div id="escena2" class="escena oculta">
+      <h2>Escena 2: El mensaje sospechoso</h2>
+      <blockquote>"Hola Nico, te interesa que te de 10.0000 monedas en el fifa por 2€. Pásame tu contraseña para poder pasartelas."</blockquote>
+      <p>¿Qué debió hacer Nico?</p>
+      <div class="opciones">
+        <button onclick="comprobarRespuesta(2, 'B')">Ignorarlo y reportarlo</button>
+        <button onclick="comprobarRespuesta(2, 'A')">Mandarle su contraseña</button>
+        <button onclick="comprobarRespuesta(2, 'C')">Preguntar a sus amigos</button>
+      </div>
+      <div id="retro2" class="mensaje"></div>
+      <button id="btnSgte2" class="boton-siguiente oculta" onclick="mostrarSospechoso(2)">Ver sospechoso</button>
+    </div>
+
+    <div id="sospechoso2" class="escena oculta">
+      <h3><i class="fi fi-sr-unlock"></i> Sospechoso desbloqueado: Vendedor Falso</h3>
+      <p>Usó ingeniería social para engañar a Nico.</p>
+      <button onclick="iniciarEscena(3)">Siguiente escena</button>
+    </div>
+
+    <div id="escena3" class="escena oculta">
+      <h2>Escena 3: Repetición de contraseñas</h2>
+      <p>Nico usaba la misma contraseña en la play y en su correo de clase.</p>
+      <p>¿Qué riesgo representa eso?</p>
+      <div class="opciones">
+        <button onclick="comprobarRespuesta(3, 'A')">Pueden vermela y acceder a todas mis cuentas y dispositivos</button>
+        <button onclick="comprobarRespuesta(3, 'B')">Es más fácil de recordar</button>
+        <button onclick="comprobarRespuesta(3, 'C')">No hay riesgo</button>
+      </div>
+      <div id="retro3" class="mensaje"></div>
+      <button id="btnSgte3" class="boton-siguiente oculta" onclick="mostrarSospechoso(3)">Ver sospechoso</button>
+    </div>
+
+    <div id="sospechoso3" class="escena oculta">
+      <h3><i class="fi fi-sr-unlock"></i> Sospechoso desbloqueado: Carlos</h3>
+      <p>Un compañero de clase que vio la contraseña en el colegio.</p>
+      <button onclick="mostrarFinal()">Resolver el caso</button>
+    </div>
+
+    <div id="final-juego" class="escena oculta">
+      <h2>¿Quién fue el culpable?</h2>
+      <p>Con toda la información, elige al responsable:</p>
+      <div class="opciones">
+        <button onclick="respuestaFinal('dark')">DarkLion99</button>
+        <button onclick="respuestaFinal('moderador')">Vendedor Falso</button>
+        <button onclick="respuestaFinal('carlos')">Carlos</button>
+      </div>
+      <div id="retroFinal" class="mensaje"></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <p>&copy; 2025 Cyberad</p>
+</footer>
+<script src="js/script.js"></script>
+<script src="js/juego.js"></script>
+</body>
+</html>

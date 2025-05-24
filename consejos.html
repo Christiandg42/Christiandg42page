@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consejos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+</head>
+<body class="fondo-seguridad">
+  <header>
+    <nav class="navegacion">
+      <div class="logo"><a href="index.html">Cyberad</a></div>
+      <button class="menu-toggle" aria-label="Abrir menú"><i class="fi fi-sr-menu-burger"></i></button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="juego.html">Juego</a></li>
+        <li><a href="consejos.html">Seguridad</a></li>
+        <li><a href="simulador.html">Simulador</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="seccion-seguridad" class="seccion activa">
+      <h1><i class="fi fi-sr-lock"></i> Consejos de Seguridad</h1>
+  <p>Descubre en formato tipo TikTok los conceptos clave de ciberseguridad.</p>
+
+  <!-- Contenedor que agrupa feed y flechas -->
+  <div class="tiktok-container">
+    <!-- Flecha arriba fija -->
+    <button id="prev-card" class="nav-arrow arrow-up">
+      <i class="fi fi-sr-arrow-circle-up"></i>
+    </button>
+
+    <!-- Feed vertical tipo TikTok -->
+    <div id="tiktok-feed" class="tiktok-feed">
+      <!-- Tarjeta extra: Ibai habla de su propio hackeo -->
+      <div class="tiktok-card">
+        <iframe
+          src="https://www.youtube.com/embed/btXnn6ZKKPE"
+          title="AYER ME HACKEARON EL CANAL - Ibai Llanos"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <div class="tiktok-info">
+          <h4><i class="fi fi-sr-camera-movie"></i> Ibai Llanos</h4>
+          <p>AYER ME HACKEARON EL CANAL – Ibai narra cómo ocurrió el hackeo</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="tiktok-card">
+        <iframe
+          src="https://www.youtube.com/embed/boQKl5BkPfs"
+          title="Ciberseguridad: Contraseñas seguras"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <div class="tiktok-info">
+          <h4><i class="fi fi-sr-camera-movie"></i> AltumX Studios</h4>
+          <p>Contraseñas seguras: ¡Crea claves fuertes!</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="tiktok-card">
+        <iframe
+          src="https://www.youtube.com/embed/UYe59gpueyk"
+          title="Así o más Claro: Phishing"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <div class="tiktok-info">
+          <h4><i class="fi fi-sr-camera-movie"></i> Claro Costa Rica</h4>
+          <p>Así o más Claro: Phishing</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="tiktok-card">
+        <iframe
+          src="https://www.youtube.com/embed/iAXBTkL_alM"
+          title="No seas estrella"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <div class="tiktok-info">
+          <h4><i class="fi fi-sr-camera-movie"></i> UNICEF</h4>
+          <p>No seas estrella: privacidad en línea</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 6: Rubius narra su hackeo -->
+      <div class="tiktok-card">
+        <iframe
+          src="https://www.youtube.com/embed/x-RrEuMUrQM"
+          title="This is how they ROBBED and HACKED my channel - Rubius"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <div class="tiktok-info">
+          <h4><i class="fi fi-sr-camera-movie"></i> Rubius</h4>
+          <p>This is how they ROBBED and HACKED my channel</p>
+        </div>
+      </div>
+
+      <!-- Nueva tarjeta: Chema Alonso -->
+      <div class="tiktok-card">
+        <iframe
+          src="https://www.youtube.com/embed/gsnFXlLYt9w"
+          title="Ciberseguridad y Hacking en un mundo de Inteligencia Artificial – Chema Alonso"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <div class="tiktok-info">
+          <h4><i class="fi fi-sr-camera-movie"></i> Chema Alonso</h4>
+          <p>Ciberseguridad y Hacking en un mundo de Inteligencia Artificial</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flecha abajo fija -->
+    <button id="next-card" class="nav-arrow arrow-down">
+      <i class="fi fi-sr-arrow-circle-down"></i>
+    </button>
+  </div>
+</section>
+</main>
+<footer>
+  <p>&copy; 2025 Cyberad</p>
+</footer>
+<script src="js/script.js"></script>
+<script src="js/juego.js"></script>
+</body>
+</html>

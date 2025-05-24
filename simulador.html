@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulador</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+</head>
+<body class="fondo-simulacro">
+  <header>
+    <nav class="navegacion">
+      <div class="logo"><a href="index.html">Cyberad</a></div>
+      <button class="menu-toggle" aria-label="Abrir menú"><i class="fi fi-sr-menu-burger"></i></button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="juego.html">Juego</a></li>
+        <li><a href="consejos.html">Seguridad</a></li>
+        <li><a href="simulador.html">Simulador</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="seccion-registro" class="seccion activa">
+      <h1><i class="fi fi-sr-basket-shopping-simple"></i> Simulador de Compra Segura</h1>
+      <p>Aprende cómo comprar de forma segura en Internet.</p>
+    
+      <div id="contador-favoritos" class="contador-fav">
+        <i id="icono-favoritos" class="fi fi-sr-heart"></i>
+        Favoritos: <span id="favoritos-num">0</span>
+      </div>           
+
+      <div class="productos">
+        <div class="producto">
+          <h2>Auriculares</h2>
+          <img src="img/cascos.png" alt="Auriculares Gamer" />
+          <p>Precio: <strong>19,99€</strong></p>
+          <div class="acciones-producto">
+          
+            <button class="icono-boton" onclick="mostrarConsejoCompra('Auriculares Gamer')">
+              <i class="fi fi-rr-shopping-cart"></i>
+            </button>
+            <button class="icono-boton" onclick="marcarFavorito(this, 'Auriculares Gamer')">
+              <i class="fi fi-sr-heart"></i>
+              <span class="etiqueta-gusto">¡Te gusta!</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <h2>Teclado RGB</h2>
+          <img src="img/teclado.png" alt="Teclado" />
+          <p>Precio: <strong>29,99€</strong></p>
+          <div class="acciones-producto">
+            <button class="icono-boton" onclick="mostrarConsejoCompra('Teclado RGB')">
+              <i class="fi fi-rr-shopping-cart"></i>
+            </button>
+            <button class="icono-boton" onclick="marcarFavorito(this, 'Teclado RGB')">
+              <i class="fi fi-sr-heart"></i>
+              <span class="etiqueta-gusto">¡Te gusta!</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="producto">
+          <h2>Silla Gamer</h2>
+          <img src="img/silla.png" alt="Silla" />
+          <p>Precio: <strong>89,99€</strong></p>
+          <div class="acciones-producto">
+            <button class="icono-boton" onclick="mostrarConsejoCompra('Silla Gamer')">
+              <i class="fi fi-rr-shopping-cart"></i>
+            </button>
+            <button class="icono-boton" onclick="marcarFavorito(this, 'Silla Gamer')">
+              <i class="fi fi-sr-heart"></i>
+              <span class="etiqueta-gusto">¡Te gusta!</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <div id="modal-consejo" class="modal-consejo">
+      <div class="modal-contenido">
+        <span class="modal-cerrar" onclick="cerrarModal()">×</span>
+        <h3><i class="fi fi-sr-lock"></i> Consejo de Ciberseguridad</h3>
+        <p id="texto-consejo"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cyberad</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/juego.js"></script>
+</body>
+</html>
